@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider, useDispatch } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { clickCounter } from "./reducers/clickCounter";
+
+const reducer = combineReducers({ clickCounter: clickCounter.reducer });
+
+const store = configureStore({
+  reducer,
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" />
+          <Route exact path="/clicks" />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
