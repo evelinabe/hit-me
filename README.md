@@ -1,7 +1,7 @@
 
-#Hit-me projekt
+# Hit-me projekt
 
-##Uppgift
+## Uppgift
 
 Skapa ett nytt projekt med Create React App med Typescript support: https://create-react-app.dev/docs/adding-typescript/ Projektet ska innehålla två sidor. Definitionen för begreppet "sida" är en vy med en unik URL som man kan navigera direkt till i webbläsaren.
 
@@ -10,7 +10,7 @@ Skapa ett nytt projekt med Create React App med Typescript support: https://crea
 
 Knappen och antalet knapptryckningar får inte visas på samma sida utan måste presenteras på separata sidor. På varje sida skall en länk finnas till den andra sidan. Länkarna till sidorna kan vara synliga på båda sidor.
 
-##Teknologier:
+## Teknologier:
 
 * React
 * Typescript
